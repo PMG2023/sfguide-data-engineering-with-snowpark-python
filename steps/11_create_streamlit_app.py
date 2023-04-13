@@ -32,10 +32,6 @@ def get_data():
             , round(daily_sales,0) as daily_sales
             , avg_temperature_fahrenheit as temp_fahrenheit
             , avg_precipitation_inches as precip_inches
-            , round(avg(daily_sales) 
-                over (partition by city_name 
-                    order by date rows between 6 preceding and current row),0
-                        ) as "7_DAY_AVG_SALES"
             , iff(precip_inches > 0, '🌧️', '☀️') as precip_ind
         from HOL_DB.ANALYTICS.DAILY_CITY_METRICS
     )
@@ -46,15 +42,11 @@ def get_data():
             , actual.month
             , actual.year
             , actual.daily_sales
-            , actual."7_DAY_AVG_SALES"
-            , actual.daily_sales - actual."7_DAY_AVG_SALES" as sales_diff_to_avg
             , actual.temp_fahrenheit
             , monthly_avg.monthly_avg_temp_fahrenheit
-            , actual.temp_fahrenheit - monthly_avg.monthly_avg_temp_fahrenheit as temp_fahrenheit_diff
             , actual.precip_inches
             , monthly_avg.monthly_avg_precip_inches
             , actual.precip_ind
-            , actual.precip_inches - monthly_avg.monthly_avg_precip_inches as precip_diff
         from actual
         inner join monthly_avg
             on actual.city_name = monthly_avg.city_name
