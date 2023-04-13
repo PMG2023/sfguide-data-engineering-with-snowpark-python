@@ -2,7 +2,7 @@
 
 This README contains the overview and lab instructions for *Data Engineering Pipelines with Snowpark Python* code contained in this repository.
 
-### ➡️ for prerequisites, see this guide for detailed steps [Data Engineering Pipelines with Snowpark Python Prerequisites (https://docs.google.com/document/d/1ezyB9_NEPOTtSBdLUQrLU1dyP4ax5HM_2Devut8kgYw/edit#).
+### ➡️ for prerequisites, see this guide for detailed steps [Data Engineering Pipelines with Snowpark Python Prerequisites](https://offers.phdata.io/hubfs/Snowpark%20Hands-On%20Lab%20Flyer_D4.pdf).
 
 Here is an overview of what we'll build in this lab:
 
@@ -13,8 +13,11 @@ Here is an overview of what we'll build in this lab:
 ### Create Anaconda Environment
 This lab will take place inside an Anaconda virtual environment running in the Codespace. You will create and activate an Anaconda environment for this lab using the supplied conda_env.yml file. Run these commands from a terminal in the root of your local forked repository.
 ```
-conda init bash
 conda env create -f conda_env.yml
+conda init bash
+```
+You will need to close and reopen the terminal, then execute:
+```
 conda activate pysnowpark
 ```
 
@@ -321,4 +324,4 @@ Now that you’re finished with the lab, you can simply run the `steps/12_teardo
 
 In this Lab we have built a robust data engineering pipeline using Snowpark Python stored procedures. This pipeline processes data incrementally, is orchestrated with Snowflake tasks, and is deployed via a CI/CD pipeline. You also learned how to use Snowflake's new developer CLI tool and Visual Studio Code/Codespaces extension! This lab has only just touched on what's possible with Snowpark. Hopefully, you now have the building blocks and examples that you need to get started building your own data engineering pipeline with Snowpark Python. So, what will you build next?
 
-If you want to go through this lab again in a self-paced format, visit the [Data Engineering Pipelines with Snowpark Python](https://quickstarts.snowflake.com/guide/data_engineering_pipelines_with_snowpark_python/#0) quickstart from Snowflake.
+If you want to go through this lab again in a self-paced format, visit [Data Engineering Pipelines with Snowpark Python](https://rise.articulate.com/share/RVLdNfMfvFnSC-zWXQBK795EaTueQ8u7). This course is hosted by phData using the content from Snowflake's [Data Engineering Pipelines with Snowpark Python quickstart](https://quickstarts.snowflake.com/guide/data_engineering_pipelines_with_snowpark_python/#0), with customized content from the BUILD.Local Snowpark series you attended.
